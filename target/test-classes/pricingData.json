@@ -1,0 +1,19 @@
+{
+  "emiratesWeeklyPrice": "10.00",
+  "emiratesLitePricing" : "5.4",
+  "emiratesCurrency" : "دولار أمريكي/شهر",
+  "emiratesMainPricing" : "10.9",
+  "emiratesPremiumPricing" : "16.3",
+
+  "omanWeeklyPrice": "1.00",
+  "omanLitePricing" : "5",
+  "omanCurrency" : "دولار أمريكي/شهر",
+  "omanMainPricing" : "10",
+  "omanPremiumPricing" : "15",
+
+  "JordanWeeklyPrice": "0.99",
+  "JordanLitePricing" : "2.7",
+  "JordanCurrency" : "دولار أمريكي/شهر",
+  "JordanMainPricing" : "5.2",
+  "JordanPremiumPricing" : "8"
+}

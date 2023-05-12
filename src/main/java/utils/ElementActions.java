@@ -4,7 +4,6 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import settings.WebsiteSettings;
 
 import java.time.Duration;
 import java.util.List;
@@ -13,7 +12,7 @@ import static utils.DriverFactory.*;
 
 public class ElementActions {
 
-    private static final WebDriver driver = getDriver(WebsiteSettings.browserName);
+    private static final WebDriver driver = getDriver(Helper.getProperty("WebsiteSettings.properties", "browserName"));
     private static final WebDriverWait wait = getDriverWait();
     private static final Actions actions = getDriverAction();
 

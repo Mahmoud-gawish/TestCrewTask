@@ -1,7 +1,7 @@
 package data;
 
 import org.json.simple.JSONObject;
-import settings.WebsiteSettings;
+import utils.Helper;
 
 import static utils.Helper.readJsonFile;
 
@@ -10,11 +10,11 @@ public class PricingData {
     private final JSONObject jsonData;
 
     private PricingData() {
-        final String filePath = WebsiteSettings.pricingJsonFile;
+        final String filePath = Helper.getProperty("WebsiteSettings.properties", "pricingJsonFile");
         jsonData = readJsonFile(filePath);
     }
 
-    public static PricingData getPricingData(){
+    public static PricingData getPricingData() {
         return new PricingData();
     }
 

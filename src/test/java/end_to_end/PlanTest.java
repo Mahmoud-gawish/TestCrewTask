@@ -2,6 +2,7 @@ package end_to_end;
 
 import base.TestBase;
 import data.PricingData;
+import io.qameta.allure.*;
 import org.testng.annotations.Test;
 import pages.HomePage;
 
@@ -9,15 +10,18 @@ import static data.PricingData.getPricingData;
 import static org.testng.Assert.assertEquals;
 import static pages.HomePage.getHomePage;
 
+@Epic("JAWWY")
+@Feature("check packages plan for Emirates , Oman & Jordan")
 public class PlanTest extends TestBase {
 
     HomePage homePage = getHomePage();
     PricingData pricingData = getPricingData();
-
-    @Test
+    @Severity(SeverityLevel.CRITICAL)
+    @Description("test Emirates plan")
+    @Test(priority = 1)
     public void TestEmiratesPlans() {
         String WeeklyPrice = homePage
-                .chooseEmiratesCountry().
+                .ChooseCountry("Emirates").
                 getMainWeeklyPrice();
         // Validate Weekly Price
         assertEquals(WeeklyPrice, pricingData.getEmiratesWeeklyPrice());
@@ -44,11 +48,13 @@ public class PlanTest extends TestBase {
         assertEquals(Currency, pricingData.getEmirateCurrency());
     }
 
-    @Test
+    @Severity(SeverityLevel.CRITICAL)
+    @Description("test Oman plan")
+    @Test(priority = 2)
     public void TestOmanPlans() {
 
         String WeeklyPrice = homePage
-                .chooseOmanCountry().
+                .ChooseCountry("Oman").
                 getMainWeeklyPrice();
         // Validate Weekly Price
         assertEquals(WeeklyPrice, pricingData.getOmanWeeklyPrice());
@@ -74,11 +80,12 @@ public class PlanTest extends TestBase {
         Currency = homePage.getPREMIUMCurrency();
         assertEquals(Currency, pricingData.getOmanCurrency());
     }
-
-    @Test
+    @Severity(SeverityLevel.CRITICAL)
+    @Description("test Jordan plan")
+    @Test(priority = 3)
     public void TestJordanPlans() {
         String WeeklyPrice = homePage
-                .chooseJordanCountry().
+                .ChooseCountry("Jordan").
                 getMainWeeklyPrice();
         // Validate Weekly Price
         assertEquals(WeeklyPrice, pricingData.getJordanWeeklyPrice());

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<!-- <suite name="TestSuite01" parallel="methods" thread-count="2"> -->
+<suite name="check packages">
+    <listeners>
+        <listener class-name="listeners.RetryListener"/>
+    </listeners>
+    <test name="Jawwy test">
+        <classes>
+            <class name="end_to_end.PlanTest">
+                <methods>
+                    <include name="TestEmiratesPlans"/>
+                    <include name="TestOmanPlans"/>
+                    <include name="TestJordanPlans"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
